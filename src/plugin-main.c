@@ -17,6 +17,7 @@ with this program. If not, see <https://www.gnu.org/licenses/>
 */
 
 #include <obs-module.h>
+#include <util/threading.h>
 
 #include "plugin-macros.generated.h"
 
@@ -27,6 +28,7 @@ bool obs_module_load(void)
 {
 	blog(LOG_INFO, "plugin loaded successfully (version %s)",
 	     PLUGIN_VERSION);
+	os_set_thread_name("test");
 	return true;
 }
 
